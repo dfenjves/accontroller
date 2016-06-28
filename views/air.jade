@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Air Conditioning
+  p Welcome to #{title}
+  iframe(width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/128773/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line")
+  form(name="acchoice", action="/ac-on-off", method="post")
+    span.label on
+      input(type="radio" name="choice" value="on")
+    span.label off
+      input(type="radio" name="choice" value="off")
+    input(type="submit")
+  h2 The Air Conditioner is now #{status}.
